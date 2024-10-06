@@ -9,7 +9,7 @@ router.post("/", async function (req, res) {
 
   try {
     const hootDoc = await HootModel.create(req.body);
-    // if we want t o send back the author property with the whole object
+    // if we want to send back the author property with the whole object
     // instead just the userId
     hootDoc._doc.author = req.user;
     res.status(201).json(hootDoc);
